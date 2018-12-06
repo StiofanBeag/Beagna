@@ -14,4 +14,10 @@ public class GreetingController {
         return "greeting";
     }
 
+    @GetMapping("/hobby")
+    public String hobby(@RequestParam(name="pasttime", required=false, defaultValue="Running") String name, Model model) {
+        model.addAttribute("pasttime", name);
+        return "hobby";
+    }
+
 }
